@@ -16,3 +16,10 @@
 (add-to-list 'load-path "~/.emacs.d/evil")
    (require 'evil)
    (evil-mode 1)
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+(require 'key-chord)
+(key-chord-mode 1)
+;;Exit insert mode by pressing j and then j quickly
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(key-chord-mode 1)
